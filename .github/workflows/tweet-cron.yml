@@ -38,7 +38,8 @@ jobs:
         echo test, and deploy your project.
         ls -alh
         date +"%Z %z"
-        TZ="Europe/Zurich"
+        ls /usr/share/zoneinfo/
+        ls /usr/share/zoneinfo/Europa
         date +"%Z %z"
         chmod +x check-for-tweet-and-post.sh
         ./check-for-tweet-and-post.sh

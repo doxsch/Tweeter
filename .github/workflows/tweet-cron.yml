@@ -37,5 +37,6 @@ jobs:
         echo Add other actions to build,
         echo test, and deploy your project.
         ls -alh
+        date +"%Z %z"
         chmod +x check-for-tweet-and-post.sh
         ./check-for-tweet-and-post.sh

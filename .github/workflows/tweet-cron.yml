@@ -37,11 +37,11 @@ jobs:
         echo Add other actions to build,
         echo test, and deploy your project.
         ls -alh
-        date +"%Z %z"
+        TZ=Europe/Zurich date +"%Z %z"
         ls /usr/share/zoneinfo/
         ls /usr/share/zoneinfo/Europe
         sudo unlink /etc/localtime 
-        sudo ln -s /usr/share/zoneinfo/Europa/Zurich /etc/localtime
+        sudo ln -s /usr/share/zoneinfo/Europe/Zurich /etc/localtime
         date +"%Z %z"
         chmod +x check-for-tweet-and-post.sh
         ./check-for-tweet-and-post.sh

@@ -39,7 +39,9 @@ jobs:
         ls -alh
         date +"%Z %z"
         ls /usr/share/zoneinfo/
-        ls /usr/share/zoneinfo/Europa
+        ls /usr/share/zoneinfo/Europe
+        ls /etc/localtime
+        cat /etc/localtime
         date +"%Z %z"
         chmod +x check-for-tweet-and-post.sh
         ./check-for-tweet-and-post.sh

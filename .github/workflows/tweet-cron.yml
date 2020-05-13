@@ -42,8 +42,7 @@ jobs:
         chmod +x check-for-tweet-and-post.sh
         ./check-for-tweet-and-post.sh
     - name: write file
-    - run: 'echo "$TW_KEYS" > ~/.twurlrc'
-      shell: bash
+      run: 'echo "$TW_KEYS" > ~/.twurlrc'
       env:
         TW_KEYS: ${{ secrets.TW_MULTI }}      
     - name: Setup Ruby for use with actions

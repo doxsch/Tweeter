@@ -48,9 +48,6 @@ jobs:
     - name: Setup Ruby for use with actions
       uses: actions/setup-ruby@v1.0.0
     - run: |
-        ls -alh ~
-        cat ~/.twurlrc
         gem install twurl
         twurl --version
-        # twurl authorize --consumer-key ${{ secrets.TW_CONSUMER_KEY }} --consumer-secret ${{ secrets.TW_CONSUMER_SEC }}
-
+        twurl --bearer "/1.1/search/tweets.json?q=hello&count=1"

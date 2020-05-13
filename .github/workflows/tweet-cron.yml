@@ -43,7 +43,12 @@ jobs:
         ./check-for-tweet-and-post.sh
     - name: Setup Ruby for use with actions
       uses: actions/setup-ruby@v1.0.0
+      env:
+        TW_KEYS: ${{ secrets.TW_MULTI }} 
     - run: |
+        'echo "$TW_KEYS" > ~/.twurlrc'
+        ls -alh ~
+        cat ~/.twurlrc
         gem install twurl
         twurl --version
         # twurl authorize --consumer-key ${{ secrets.TW_CONSUMER_KEY }} --consumer-secret ${{ secrets.TW_CONSUMER_SEC }}

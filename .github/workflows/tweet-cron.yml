@@ -26,21 +26,11 @@ jobs:
         repository: doxsch/Tweets
         token: ${{ secrets.GH_SERVICE_ACCOUNT }}
 
-
-    # Runs a single command using the runners shell
-    - name: Run a one-line script
-      run: echo Hello, world!
-
     # Runs a set of commands using the runners shell
     - name: Run a multi-line script
       run: |
         echo Add other actions to build,
-        echo test, and deploy your project.
-        ls -alh
-        sudo unlink /etc/localtime 
-        sudo ln -s /usr/share/zoneinfo/Europe/Zurich /etc/localtime
-        chmod +x check-for-tweet-and-post.sh
-        ./check-for-tweet-and-post.sh
+        echo test, and deploy your project.       
     - name: write file
       run: 'echo "$TW_KEYS" > ~/.twurlrc'
       env:
@@ -51,3 +41,8 @@ jobs:
         gem install twurl
         # twurl --version
         # twurl --bearer "/1.1/search/tweets.json?q=hello&count=1"
+        sudo unlink /etc/localtime 
+        sudo ln -s /usr/share/zoneinfo/Europe/Zurich /etc/localtime
+        chmod +x check-for-tweets-and-post.sh
+        ./check-for-tweets-and-post.sh
+

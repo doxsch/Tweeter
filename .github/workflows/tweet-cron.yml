@@ -17,32 +17,22 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    - name: Check-out tweets
+    - name: Check-out Tweets Repo
       uses: actions/checkout@v2
       with:
         repository: doxsch/Tweets
-        token: ${{ secrets.GH_SERVICE_ACCOUNT }}
-
-    # Runs a set of commands using the runners shell
-    - name: Run a multi-line script
-      run: |
-        echo Add other actions to build,
-        echo test, and deploy your project.       
-    - name: write file
+        token: ${{ secrets.GH_SERVICE_ACCOUNT }}    
+    - name: write config file
       run: 'echo "$TW_KEYS" > ~/.twurlrc'
       env:
         TW_KEYS: ${{ secrets.TW_MULTI }}      
-    - name: Setup Ruby for use with actions
+    - name: Install twurl and run check-for-tweets-and-post.sh
       uses: actions/setup-ruby@v1.0.0
     - run: |
         gem install twurl
-        # twurl --version
-        # twurl --bearer "/1.1/search/tweets.json?q=hello&count=1"
         sudo unlink /etc/localtime 
         sudo ln -s /usr/share/zoneinfo/Europe/Zurich /etc/localtime
         chmod +x check-for-tweets-and-post.sh
         chmod +x tweet-media.sh
-
         ./check-for-tweets-and-post.sh
 

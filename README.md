@@ -2,7 +2,7 @@
 ![Tweet-Cron](https://github.com/doxsch/Tweeter/workflows/Tweet-Cron/badge.svg?event=schedule)
 
 Tweeter is a github action, which is triggered every hour at 5 past. 
-Afterwards a private repository is checked out, which contains scheduled tweets. Afterwards it is checked if there is a tweet scheduled for the current hour. If so, the tweet will be posted.
+Afterwards a private repository is checked out, which contains scheduled tweets. After that, it is checked if there is a tweet scheduled for the current hour. If so, the tweet will be posted.
 
 The structure of the private repository looks like this:
 

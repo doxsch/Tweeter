@@ -44,5 +44,7 @@ jobs:
         sudo unlink /etc/localtime 
         sudo ln -s /usr/share/zoneinfo/Europe/Zurich /etc/localtime
         chmod +x check-for-tweets-and-post.sh
+        chmod +x tweet-media.sh
+
         ./check-for-tweets-and-post.sh
 

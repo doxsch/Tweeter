@@ -17,4 +17,5 @@ The structure of the private repository looks like this:
             20-20.png 
             20-20.tweet
 ```
-The naming convention is as follows: The publication date is created as a folder in the format `YYYY-MM-DD`. Various `*.tweet` files can be stored in this folder, which are named according to the following convention: `<publishing hour>.<digit between 00 and 59>.tweet`. If there is a media file (supported formats **png, jpg, mp4**) with the same name as the `*.tweet` file, it will be published with the tweet. All tweets of the same hour are published simultaneously.
+The naming convention is as follows: The publication date is created as a folder in the format `YYYY-MM-DD`. Various `*.tweet` files can be stored in this folder, which are named according to the following convention: \
+`<publishing hour>.<digit between 00 and 59>.tweet`. If there is a media file (supported formats **png, jpg, mp4**) with the same name as the `*.tweet` file, it will be published with the tweet. All tweets of the same hour are published simultaneously.
